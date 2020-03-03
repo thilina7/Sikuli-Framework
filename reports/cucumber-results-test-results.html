@@ -1,0 +1,68 @@
+<html>
+<head><style type="text/css">h1 {background-color:#9999CC}
+h2 {background-color:#BBBBCC}
+h3 {background-color:#DDDDFF}
+th {border:1px solid black;background-color:#CCCCDD;}
+td{border:1px solid black;}
+table {border:1px solid black;border-collapse: collapse;}
+.chart {border:0px none black;border-collapse: collapse;background-color: none;}
+.passed {background-color:lightgreen;font-weight:bold;color:darkgreen}
+.failed {background-color:tomato;font-weight:bold;color:darkred}
+.undefined {background-color:gold;font-weight:bold;color:goldenrod}
+.skipped {background-color:silver;font-weight:bold;color:darkgray}
+.known {background-color:goldenrod;font-weight:bold;color:darkred}
+.passed_description {background-color:#D0FFD0;font-weight:bold;font-style:italic;color:black}
+.failed_description {background-color:#FFA898;font-weight:bold;font-style:italic;color:black}
+.comment {font-family:courier;font-weight:normal;font-size:small;color:black;border:1px dashed black;background-color:silver}
+.tip {font-family:courier;font-weight:normal;font-size:small;color:white;background-color:black}
+OL { counter-reset: item }
+OL>LI { display: block }
+OL>LI:before { content: counters(item, ".") " "; counter-increment: item }
+
+div.header {
+    display: block; text-align: center;
+    position: running(header);
+}
+div.footer {
+    display: block; text-align: center;
+    position: running(footer);
+}
+div.content {page-break-after: always;}
+@page {
+	 size: __PAGESIZE__;
+     @top-center {
+     	content: "Detailed Results Report";
+	    color: silver;
+	    font-size: 14px;
+     }
+     @top-right {
+     	content: date("dd MMM, yyyy hh:mm");
+	    color: silver;
+	    font-size: 8px;
+     }
+    @bottom-right {
+    	content: "Page " counter(page) " of " counter(pages) ;
+	    color: silver;
+	    font-size: 8px;
+    }
+}
+ol a::after {
+  content: leader('.') target-counter(attr(href), page);
+}
+</style>
+<title>Detailed Results Report</title>
+  </head>
+  <body>
+    <div class='header'></div>
+    <div class='footer'></div>
+  <h1>Overview</h1>
+<table><tr><th></th><th>Passed</th><th>Failed</th><th>Known</th><th>Undefined</th><th>Total</th><th>%Passed</th></tr><tr><th>Features</th><td class="passed" id="features_passed">0</td><td class="failed" id="features_failed">1</td><td class="known" id="features_known">0</td><td class="undefined" id="features_undefined">0</td><td id="features_total">1</td><td id="features_rate">0.00</td></tr><tr><th>Scenarios</th><td class="passed" id="scenarios_passed">0</td><td class="failed" id="scenarios_failed">1</td><td class="known" id="scenarios_known">0</td><td class="undefined" id="scenarios_undefined">0</td><td id="scenarios_total">1</td><td id="scenarios_rate">0.00</td></tr><tr><th>Steps</th><td class="passed" id="steps_passed">0</td><td class="failed" id="steps_failed">1</td><td class="known" id="steps_known">0</td><td class="undefined" id="steps_undefined">7</td><td id="steps_total">8</td><td id="steps_rate">0.00</td></tr></table><div><b>Overall Duration: 0h 00m 12s</b></div>
+<a id="top"></a><h1>Table of Contents</h1><ol><li> <span class="failed"><a href="#feature-1carry-out-sead-mission-by-an-interrupted-method-of-fire">Carry_out_SEAD_mission_by_an_Interrupted_method_of_fire</a></span><ol><li> <span class="failed"><a href="#sc-5-carry-out-sead-mission-by-an-interrupted-method-of-fire;validating-sead-engagement-times-panel">Validating SEAD engagement times panel</a></span></li></ol></li></ol><h1>Detailed Results Report</h1><table width="700px"><tr class="failed"><td colspan="4"><b>Feature:</b> <a id="feature-1carry-out-sead-mission-by-an-interrupted-method-of-fire">Carry_out_SEAD_mission_by_an_Interrupted_method_of_fire</a></td></tr><tr class="failed"><td><small><b>Passed:</b> 0</small></td><td><small><b>Failed:</b> 1</small></td><td><small><b>Undefined:</b> 0</small></td><td><small>Duration: 12.06s</small></td></tr><tr class="failed"><td colspan="4" style="padding-left:20px"> <table width="100%"><tr class="failed"><td colspan="4"><b>Scenario:</b> <a id="sc-5-carry-out-sead-mission-by-an-interrupted-method-of-fire;validating-sead-engagement-times-panel">Validating SEAD engagement times panel</a></td></tr><tr class="failed"><td><small><b>Passed:</b> 0</small></td><td><small><b>Failed:</b> 1</small></td><td><small><b>Undefined:</b> 7</small></td><td><small>Duration: 12.06s</small></td></tr><tr class="passed"><td>Before</td><td colspan="2"></td><td width="100">0.73s</td></tr><tr class="passed"><td colspan="4"></td></tr><tr class="failed"><td colspan="4" style="padding-left:20px"> <table width="100%"><tr class="failed"><td><b>Given </b> user should be in the Instructor control panel to Automate the &quot;6.2.1&quot; Testcase</td><td width="100">4.88s</td></tr><tr class="failed"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td></td></tr><tr><td>ICP</td><td>icp</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td></td></tr></table></td></tr><tr class="failed"><td colspan="2"><div><br>java.lang.AssertionError: --------------Failed to click ICP</br><br>
+	at org.junit.Assert.fail(Assert.java:88)</br><br>
+	at org.junit.Assert.assertTrue(Assert.java:41)</br><br>
+	at com.cucumber.common.CommonSteps.VBSFillData(CommonSteps.java:1167)</br><br>
+	at com.cucumber.definition.admin.Fires_and_Effects_Using_AMC.user_should_be_in_the_Instructor_control_panel_to_Automate_the_Testcase(Fires_and_Effects_Using_AMC.java:48)</br><br>
+	at &#10045;.Given user should be in the Instructor control panel to Automate the &quot;6.2.1&quot; Testcase(E_6.2.3_Carry_out_SEAD_mission_by_an_Interrupted_method_of_fire.feature:6)</br><br>
+</br></div></td></tr><tr class="skipped"><td><b>And </b> User should click on the clear button to &quot;clear all the fields&quot; clear all the fields</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td></tr><tr><td>clear</td><td>clear</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User should be fill the data on the &quot;Battery, FO, Mission type and Gun to fire&quot; on the panel</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td></tr><tr><td>Battery</td><td>Battery</td><td>24S VJ 13277 88461</td><td>sclick</td><td>40,0</td></tr><tr><td>20</td><td>20</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr><tr><td>FO</td><td>FO</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr><tr><td>R2</td><td>R2</td><td></td><td>sclick</td><td>0,0</td></tr><tr><td>MissionType</td><td>MissionType</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr><tr><td>SEAD</td><td>SEAD</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr><tr><td>Guns1</td><td>Guns1</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr><tr><td>Guns2</td><td>Guns2</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User should enter the &quot;Grid location, Altitude and Direction&quot; on the target location section</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td>Similarity Check</td></tr><tr><td>Sup</td><td>Sup</td><td>24SVJ 10205 85816</td><td>textbox</td><td>100,0</td><td></td></tr><tr><td>Mark</td><td>Mark</td><td>24S VJ 10204 85803</td><td>textbox</td><td>100,0</td><td></td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User should fill the Target description &quot;section size, Type and Status&quot;</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td>Similarity Check</td></tr><tr><td>Size</td><td>Size</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.95</td></tr><tr><td>Squad</td><td>Squad</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Modifier</td><td>Modifier</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Reinforced</td><td>Reinforced</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Type</td><td>Type</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.95</td></tr><tr><td>TypeArrowDown</td><td>TypeArrowDown</td><td></td><td>sclick</td><td>0,0</td><td>0.95</td></tr><tr><td>TypeArrowDown</td><td>TypeArrowDown</td><td></td><td>sclick</td><td>0,0</td><td>0.95</td></tr><tr><td>Troops</td><td>Troops</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Modifier2</td><td>Modifier2</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>SmallArms</td><td>SmallArms</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Status</td><td>Status</td><td>90</td><td>click_similar</td><td>40,0</td><td>0.80</td></tr><tr><td>InOpen</td><td>InOpen</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>TargetDescription</td><td>TargetDescription</td><td>90</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>pagedown</td><td>wp</td><td>24S VJ 13277 88461</td><td>pagedown</td><td>0,0</td><td>0.95</td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User should Ammo/Fuse combination section &quot;Ammo/Fuse and Tick on number per rounds and specofied rounds&quot;</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td>Similarity Check</td></tr><tr><td>Supperssion_Ammo</td><td>Supperssion_Ammo</td><td>24S VJ 13277 88461</td><td>sclick</td><td>100,0</td><td>0.95</td></tr><tr><td>HE</td><td>HE</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>wp</td><td>wp</td><td>24S VJ 13277 88461</td><td>sclick</td><td>0,0</td><td>0.95</td></tr><tr><td>pagedown</td><td>wp</td><td>24S VJ 13277 88461</td><td>pagedown</td><td>0,0</td><td>0.95</td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User select a &quot;Method of Fire and control&quot; Method of Fire and control</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td>Similarity Check</td></tr><tr><td>Continuous</td><td>Continuous</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>Interrupted</td><td>Interrupted</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>SEAD_ok</td><td>SEAD_ok</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr><tr><td>CASTOT</td><td>CASTOT</td><td>10</td><td>textbox</td><td>0,0</td><td>0.90</td></tr><tr><td>ArrowUp</td><td>ArrowUp</td><td></td><td>sclick</td><td>0,0</td><td>0.90</td></tr></table></td></tr><tr class="skipped"><td><b>And </b> User should click on the &quot; valid and execute button&quot; valid and execute buttons</td><td width="100">0.00s</td></tr><tr class="skipped"><td style="padding-left:20px" colspan="2"><table><tr><td>Tag Name</td><td>path</td><td>Value</td><td>Action</td><td>OffSetValue</td><td>Similarity Check</td></tr><tr><td>Validate</td><td>Validate1</td><td></td><td>sclick</td><td>0,0</td><td>0.80</td></tr><tr><td>Execute</td><td>Execute1</td><td></td><td>sclick</td><td>0,0</td><td>0.80</td></tr></table></td></tr><tr class="skipped"><td colspan="2"><img src="screenshots/5_carry_out_sead_mission_by_an_interrupted_method_of_fire_validating_sead_engagement_times_panel1583212402150.png" width="700px" /></td></tr></table></td></tr><tr class="passed"><td>After</td><td colspan="2"></td><td width="100">6.45s</td></tr><tr class="passed"><td colspan="4"></td></tr><tr><td colspan="5"><sup><a href="#top">Back to Table of Contents</a></sup></td></tr></table></td></tr><tr><td colspan="5"></td></tr></table>
+	</body>
+</html>
